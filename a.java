@@ -1,4 +1,4 @@
-public class a{
+public class duplicate_element{
     public static void main(String args[]){
         
     
