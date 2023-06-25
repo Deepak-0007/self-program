@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>New Menus</title>
+    </head>
+    
+
+    <style>
+        body {
+    padding: 20px;
+    background-image: url("123.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+        .burger, .menu, .background {
+            position: fixed;
+            background-repeat: no-repeat;
+        }
+        .menu, .menu a, .background {
+            transition: 0.5s;
+        }
+        .burger {
+            z-index: 3;
+            top: 0;
+            left: 0;
+            display: grid;
+            place-items: center;
+            width: 88px;
+            height: 88px;
+            background-image: url("menu.svg");
+            border: 0;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+        .background{
+            z-index: 1;
+            top: -10%;
+            left: 10%;
+            width: 120%;
+            height: 120%;
+            background-size: cover;
+            background-position: 80%;
+        }
+        .menu {
+            z-index: 2;
+            top: 0;
+            left: 0;
+            display: grid;
+            place-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            visibility: hidden;
+        }
+        .menu nav:hover a {
+            opacity: 0.25;
+        }
+        .menu nav a:hover {
+            opacity: 1;
+        }
+        .menu nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu a {
+            position: relative;
+            color: #f9f9f9;
+            font-size: 32px;
+            padding: 20px 0;
+            width: 300px;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+        .menu a::after {
+            content: "";
+            position: absolute;
+            left: o;
+            bottom: 10px;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background: #f7f7f7;
+            transform: scaleX(0);
+            transform-origin: 0% 50%;
+            transition: 0.4s;
+        }
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                translate: 0 50px;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .menu a:hover::after {
+            transform: scaleX(1);
+        }
+        body.open .burger {
+            background-image: url("close.svg");
+        }
+        body.open .menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        body.open .menu a {
+            animation: 0.3s backwards;
+        }
+        body.open .background {
+            filter: blur(10px);
+        }
+
+    </style>
+
+    <body>
+        <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="20"></rect>
+            <rect y="30" width="100" height="20"></rect>
+            <rect y="60" width="100" height="20"></rect>
+          </svg>
+        <div class="background"></div>
+
+        <button class="burger" onclick="toggleMenu()">
+                
+            </button>
+        
+                <div class="menu">
+                    <nav>
+                        <a href="#" style="animation-delay: 0.1s">
+                        Home
+                        </a>
+                        <a href="#" style="animation-delay: 0.2s">
+                            About
+                        </a>
+                        <a href="#" style="animation-delay: 0.3s">
+                            Contact
+                        </a>
+                    </nav>
+                </div>
+
+                <script type="text/javascript">
+                    const toggleMenu = () => {
+                        document.body.classList.toggle("open");
+                    };
+                </script>
+    </body>
+</html>
