@@ -4,7 +4,7 @@ public class binarysearch2 {
         int arr[]={12,11,10,9,7};
         int target=11;
         int ans=binarySearch(arr,target);
-        System.out.println("location of target element by binary search is "+ans);
+        System.out.println("location of target element by binary search is on "+ans);
     }
     static int binarySearch(int arr[] , int target){
         int start=0;
