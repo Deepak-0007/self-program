@@ -6,7 +6,7 @@ public class RowColMatrix {
             {10,20,30,40},
             {15,25,35,45},
             {28,29,37,47},
-            {33,34,38,50}
+            {33,34,38,60}
         };
         System.out.println(Arrays.toString(search(arr, 47)));
     }
