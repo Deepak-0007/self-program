@@ -1,7 +1,7 @@
 public class binarypractice {
     public static void main(String[] args) {
         int arr[]={2,3,4,8,9,10,11};
-        int target=2;
+        int target=3;
         int ans=binarypractice1(arr, target);
         System.out.println(ans);
         
